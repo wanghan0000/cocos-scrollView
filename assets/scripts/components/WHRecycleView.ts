@@ -194,7 +194,9 @@ export default class WHRecycleView extends cc.Component {
         return this._adapter;
     }
 
-
+    @property({
+        serializable: true,
+    })
     protected _adapterNode: cc.Node = null;
 
     /**滚动器一半的值 如果是横向布局则是 width/2 纵向布局则是 height/2 */
@@ -204,7 +206,7 @@ export default class WHRecycleView extends cc.Component {
     /**上一次content的X值，用于和现在content的X值比较，得出是向左还是向右滚动 */
     protected lastContentPosX: number = 0;
     //分帧创建器
-    protected gener: Generator;
+    protected gener: Generator = null;
 
     /**item节点内存池 */
     protected _pool: Map<number, Array<WHRecycleHolder>> = new Map();

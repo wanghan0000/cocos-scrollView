@@ -6,7 +6,7 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class Adapter extends WHRecycleAdapter<Holder> {
     @property(cc.Prefab)
-    private item: cc.Prefab;
+    private item: cc.Prefab = null;
 
     private datas = [];
 
